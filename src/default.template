@@ -1,0 +1,39 @@
+--- pipeline:erb,tags,blocks,head
+<!DOCTYPE html>
+<html lang="en"> 
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>{title:}</title>
+    <link href='http://fonts.googleapis.com/css?family=Cardo:400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link type="text/css" rel="stylesheet" media="all" href="{relocatable: default.css}" />
+  </head>
+
+  <body>
+    <div id="body">
+      <div id="content">
+
+	<h1><a href="/">lachrymology</a></h1>
+
+	<ul id="posts">
+	  <li class="post">
+	    <div class="post-body text-post">
+	      <h3>{title:}</h3>
+	      <webgen:block name="content"/>
+            </div>
+	  </li>
+	  <hr>
+	  <h4>{created:}</h4>
+	</ul>
+
+	<div id="footer">
+          <p>
+	    <a href="http://www.lachrymology.org">Home</a> | 
+	    <a href="http://twitter.com/fogus">@fogus</a>
+	  </p>
+	</div>
+      </div>
+    </div>
+  </body>
+</html>
+
