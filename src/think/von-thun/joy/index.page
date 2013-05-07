@@ -1,7 +1,7 @@
 ---
 title: Joy
 created: 2013.04.11
-last_modified: 2013.04.11
+last_modified: 2013.05.07
 author: Fogus
 author_link: http://www.fogus.me
 ---
@@ -16,8 +16,7 @@ author_link: http://www.fogus.me
   * 23-JUN-03 (Sec 2) "Fast small truth tables" (using Joy sets) 
   * 07-MAY-03 (Sec 2) "Nested Recursion" (also (Sec 3) new interp.c)
   * 23-APR-03 (Sec 2) Revised Paper 9: "The current implementation" 
-  * 17-MAR-03 Modules: changes to globals.h, main.c, scan.c utils.c (Sec 3)  
-[modtst.joy][2] and [modtst.out][3] output. 
+  * 17-MAR-03 Modules: changes to globals.h, main.c, scan.c utils.c (Sec 3) [modtst.joy][2] and [modtst.out][3] output. 
   * 11-FEB-03 (Sec 2) Revised Paper 1: "Tutorial on Joy" 
   * 24-JAN-03 (Sec 2) The online manual and help outputs 
   * 04-DEC-02 (Sec 3) Nick Forde's (thanks) command line options in interp.c 
