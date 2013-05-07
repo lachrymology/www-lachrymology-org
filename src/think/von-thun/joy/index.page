@@ -6,5 +6,274 @@ author: Fogus
 author_link: http://www.fogus.me
 ---
 
-TODO
+---------- NEW ---------- 
 
+  * [joydir.txt][1] Most recent Joy directory sorted by access. 
+    * 2-SEP-05 (Sec 2) "Floy - a flat concatenative subset of Joy" 
+	  * 18-MAY-05 (Sec 2) "Survey of reproducing programs" 
+	    * 18-MAR-05 (Sec 2, "Lazy lists as reproducing programs" 
+		  * 14-FEB-05 (Sec 2) "The annoying quadratic formula" 
+		    * 23-JUN-03 (Sec 2) "Fast small truth tables" (using Joy sets) 
+  * 07-MAY-03 (Sec 2) "Nested Recursion" [also (Sec 3) new interp.c] 
+    * 23-APR-03 (Sec 2) Revised Paper 9: "The current implementation" 
+	  * 17-MAR-03 Modules: changes to globals.h, main.c, scan.c utils.c (Sec 3)  
+[modtst.joy][2] and [modtst.out][3] output. 
+  * 11-FEB-03 (Sec 2) Revised Paper 1: "Tutorial on Joy" 
+    * 24-JAN-03 (Sec 2) The online manual and help outputs 
+	  * 04-DEC-02 (Sec 3) Nick Forde's (thanks) command line options in interp.c 
+  * 04-NOV-02 (Sec 3) Nick Forde's (thanks) "undefs" in interp.c 
+    * 28-OCT-02 (Sec 2) Matrix library - fixed an error "mapr2" 
+	  * 25-OCT-02 (Sec 2) Church arithmetic and Church logic (revised) 
+	    * 06-MAY-02 (Sec 3) Grammar library, with demo 
+		  * 03-APR-02 (Sec 3) End-of-line comments using # (in scan.c) 
+		    * 14-MAR-02 (Sec 3) Propositional logic semantic tableaux library, with demo 
+  * 26-FEB-02 (Sec 3) LICENSE (bsd license) 
+    * 21-Feb-02 (Sec 3) Symbolic Manipulation library, with demo 
+	  * 01-FEB-02 (Sec 3) Lisp interpreter written in Joy, with demo  
+	  
+	    * 23-NOV-01 (Sec 3) "Lazy" list library, with demo 
+		  * 01-NOV-01 (Sec 3) Recent bug fixes to C-source (interp.c)  
+		  
+		    * 11-OCT-01 (Sec 2) Pearls: Imperative Thinking in Joy 
+			  * 03-SEP-01 (Sec 3) Interactive Tutorial library, with demo 
+  * 03-AUG-01 (Sec 2) Frequently Asked Questions about Joy 
+    * 12-JUL-01 (Sec 3) New basic Joy libraries 
+	  * 04-JUL-01 (Sec 2) Pearls of Joy 
+	    * 16-JUN-01 (Sec 3) "Terminal" update to Joy0 C sources 
+		  * 01-JUN-01 (Sec 3) John Cowan's Joy1 C sources 
+		  
+		     [1]: joy/joydir.txt
+			    [2]: joy/modtst.joy
+				   [3]: joy/modtst.out
+				   
+				   Contents: 
+				   
+				     1. Various introductions to Joy 
+					   2. Papers on Joy 
+					     3. The C sources and the Joy libraries 
+						   4. Mailing group "concatenative" 
+						   
+						   # 1. Various introductions to Joy
+						   
+						   These introductions contain some common material. 
+
+  * [ Synopsis of the language Joy][4] (1K)A one-page introduction 
+    * [ Frequently Asked Questions about Joy][5] (24K) for programmers 
+	  * [ Joy: Forth's Functional Cousin][6] includes comparisons with Forth 
+  * [ Apter interviews von Thun][7] in APL journal Vector  
+  (if unsuccessful, follow "weblog" link towards end) 
+    * [ Rationale][8] for Joy (65K), for theoretical computer scientists 
+  * [ Overview][9]of Joy (27K), introductory sections of other papers. 
+    * You don't like theory? Try the tutorial below. 
+	
+	   [4]: joy/synops.html
+	      [5]: joy/faq.html
+		     [6]: joy/forth-joy.html
+			    [7]: http://www.vector.org.uk/?fetch=v203/vonthun203.html
+   [8]: joy/j00rat.html
+      [9]: joy/j00ovr.html
+	  
+	  # 2. Papers on Joy
+	  
+	    * 1.[ Tutorial on Joy ][10] Revised 11-Feb-03 (47K) 
+		  * 2.[ Mathematical Foundations][11] of Joy (50K) 
+		    * 3.[ Atomic Programs][12] of Joy (48K) 
+			  * 4.[ The Algebra][13] of Joy (56K) 
+			    * 5.[ Recursion Theory][14] and Joy (60K) 
+				  * 6.[ Programming ][15] in Joy (80K) 
+				    * 7.[ A rewriting system ][16] for Joy (57K) 
+					  * 8.[ Joy compared ][17] with other functional languages (46K) 
+  * 9.[ The current implementation ][18] Revised 23-APR-03 (41K)  
+  The following are produced automatically and always up to date:  
+  [plain-manual][19] The online manual for Joy primitives (text format)  
+[html-manual][20] The same (html format)  
+[ List of primitive and currently defined library functions][21]  
+(by "help." command, all libraries loaded)  
+(External) [ Nick Forde's documentation library][22]  
+
+  * (External) [ The Theory of Concatenative Combinators][23]  
+  An algebraic treatment, by Brent Kerby (2002) 
+    * A collection of diverse examples of program development in Joy: 
+	
+	   [10]: joy/j01tut.html
+	      [11]: joy/j02maf.html
+		     [12]: joy/j03atm.html
+			    [13]: joy/j04alg.html
+				   [14]: joy/j05cmp.html
+				      [15]: joy/j06prg.html
+					     [16]: joy/j07rrs.html
+						    [17]: joy/j08cnt.html
+							   [18]: joy/j09imp.html
+							      [19]: joy/plain-manual.html
+								     [20]: joy/html-manual.html
+									    [21]: joy/allhelp.html
+										   [22]: http://www.system-7.freeserve.co.uk/joy/hlplib/
+   [23]: http://tunes.org/~iepos/joy.html
+   
+       * [ Design of a Joy interpreter written in Joy ][24]
+	   
+	      [24]: joy/jp-joyjoy.html
+		  
+		        * Programs from the above (with additions) [jp-joyjoy.joy][25]
+      * [jp-joytst.joy][26] test and [jp-joytst.out][27] (VMS: NOBDW) output 
+
+   [25]: joy/jp-joyjoy.joy
+      [26]: joy/jp-joytst.joy
+	     [27]: joy/jp-joytst.out
+		 
+		     * [ Design of matrix multiplication programs][28]
+			     * [ Imperative thinking for Joy programs][29]
+				     * [ Church arithmetic and Church logic][30] with Brent Kirby, and [jp-church.joy][31] the source. 
+    * [ Nested Recursion][32] and a new recursion combinator. 
+	    * [ Fast small truth tables ][33] (using Joy native sets) 
+		    * [ The annoying quadratic formula][34]
+			    * [ Lazy lists as reproducing programs][35]
+				    * [ Survey of reproducing programs][36]
+					    * [ Floy - a flat concatenative subbset of Joy][37]
+
+   [28]: joy/jp-matmul.html
+      [29]: joy/jp-imper.html
+	     [30]: joy/jp-church.html
+		    [31]: joy/jp-church.joy
+			   [32]: joy/jp-nestrec.html
+			      [33]: joy/jp-trutab.html
+				     [34]: joy/jp-quadratic.html
+					    [35]: joy/jp-reprod.html
+						   [36]: joy/jp-survrep.html
+						      [37]: joy/jp-flatjoy.html
+							  
+							    * [ Joy bibliography][38]
+								  * [joyhtml.tar.gz][39] gzipped tar file of all the papers. 
+
+   [38]: joy/joybibl.bib
+      [39]: joy/joyhtml.tar.gz
+	  
+	  # 3. The C sources and the Joy libraries
+	  
+	  The C sources: 
+	  
+	    * [ The old Joy0 C-files][40] The prototype has now been abandoned. 
+  * [ Joy1 Prospectus ][41] (1K)  
+  Summary description of John Cowan's Joy1 (June 2001) 
+    * [ John Cowan's site: his joy.tar.gz][42] (500K) 
+	  * [ current joy.tar.gz][43] (500K) includes:   
+	  Garbage collector, Joy1 C-sources, makefiles, Joy libraries  
+	  Use this to build Joy1 initially on unix systems. 
+	    * [ The new Joy1 C-sources][44] (including a tar.gz)   
+		Use these to build Joy1 on non-unix systems, or to update just the C-sources. 
+  * [ Bugs, Fixes and Plans][45](30-Oct-01)   
+  
+    * [ LICENSE][46] (BSD license) 
+	  * [ Miscellanous ][47] miniature implementations of Joy 
+	  
+	     [40]: joy/j0src.html
+		    [41]: joy/j1prospect.html
+			   [42]: http://www.ccil.org/~cowan/joy.tar.gz
+			      [43]: joy/joy.tar.gz
+				     [44]: joy/j1src.html
+					    [45]: joy/bugfix.html
+						   [46]: joy/LICENSE.html
+						      [47]: joy/jmisc.html
+							  
+							  Joy libraries: 
+							  
+							    * [usrlib.joy][48] personal user library, loaded by default 
+  * [inilib.joy][49] the initial library of the Joy system 
+    * The basic libraries 
+	
+	   [48]: joy/usrlib.joy
+	      [49]: joy/inilib.joy
+		  
+		      * [agglib.joy][50] aggregates: sets, lists, strings 
+			      * [seqlib.joy][51] sequences: lists, strings with ordering 
+    * [numlib.joy][52] numeric: integers, floats 
+	    * [symlib.joy][53] symbolic manipulation (only translations so far)  
+with [symtst.joy][54] test file and [symtst.out][55] output 
+
+   [50]: joy/agglib.joy
+      [51]: joy/seqlib.joy
+	     [52]: joy/numlib.joy
+		    [53]: joy/symlib.joy
+			   [54]: joy/symtst.joy
+			      [55]: joy/symtst.out
+				  
+				    * The special libraries 
+					
+					    * [mtrlib.joy][56] (matrices and vectors)  
+						with [mtrtst.joy][57] test file and [mtrtst.out][58] output 
+    * [tutlib.joy][59] (interactive tutorials)   
+	with [joytut.joy][60] an application and   
+	a (pseudo) input [joytut.com][61] and output [joytut.out][62]
+	    * [lazlib.joy][63] ("lazy" infinite and finite lists)  
+		with [laztst.joy][64] test file and [laztst.out][65] output 
+		    * [lsplib.joy][66] A small (eval-apply) Lisp interpreter in Joy, and  
+[lsplib.lsp][67] a small library for this version of Lisp.  
+[lsptst.joy][68] and [lsptst.lsp][69] input and [lsptst.out][70] output. 
+    * [plglib.joy][71] propositional logic semantic tableaux  
+	with [plgtst.joy][72] test file and [plgtst.out][73] output 
+	    * [grmlib.joy][74] grammar library (generating and parsing)  
+		with [grmtst.joy][75] test file and [grmtst.out][76] output 
+		    * [ rabbit][77] (external) a Joy to HTML translation library by Heiko Kuhrt, it contains an extensive Joy manual in HTML format 
+    * [ mandel][78] (external) several Mandelbrot programs in Joy by Nick Forde et. al. collected by Nick Forde 
+
+   [56]: joy/mtrlib.joy
+      [57]: joy/mtrtst.joy
+	     [58]: joy/mtrtst.out
+		    [59]: joy/tutlib.joy
+			   [60]: joy/joytut.joy
+			      [61]: joy/joytut.com
+				     [62]: joy/joytut.out
+					    [63]: joy/lazlib.joy
+						   [64]: joy/laztst.joy
+						      [65]: joy/laztst.out
+							     [66]: joy/lsplib.joy
+								    [67]: joy/lsplib.lsp
+									   [68]: joy/lsptst.joy
+									      [69]: joy/lsptst.lsp
+										     [70]: joy/lsptst.out
+											    [71]: joy/plglib.joy
+												   [72]: joy/plgtst.joy
+   [73]: joy/plgtst.out
+      [74]: joy/grmlib.joy
+	     [75]: joy/grmtst.joy
+		    [76]: joy/grmtst.out
+			   [77]: http://www.groups.yahoo.com/group/concatenative/files/rabbit
+   [78]: http://www.groups.yahoo.com/group/concatenative/files/mandel.html
+
+  * [joylibs.tar.gz][79] (01-NOV-01) gzipped tar file of all *.joy libraries and miscellaneous files. 
+
+   [79]: joy/joylibs.tar.gz
+   
+   # 4. Mailing group "concatenative"
+   
+   There is also a discussion group dealing with Joy and related topics. To browse previous messages, or to join the group, see [ http://groups.yahoo.com/group/concatenative][80]  
+Both browsing and joining are junk-mail-proof. These messages can be read without joining the group. There have been 1116 contributions in the first two years, 1-MAY-2000 to 1-MAY-2002. Thanks to the coordinator, Billy Tanksley, for setting it up. I am also very grateful to the members of this group for many discussions, ideas and help. 
+
+   [80]: http://groups.yahoo.com/group/concatenative
+   
+   In addition to the mail messages there is also a growing collection of files:  
+[ http://groups.yahoo.com/group/concatenative/files/][81]  
+These files have been contributed by members of the mailing group. They contain several Joy programs, some discussion papers, some documentation, and also an implementation (NJoy) of Joy in ML. These files can only be read after joining the group. 
+
+   [81]: http://groups.yahoo.com/group/concatenative/files/
+   
+   Back to homepage for [Manfred von Thun][82]
+   
+      [82]: index.html
+	  
+	  Mailto: [Manfred von Thun][83] (email: phimvt@lure.latrobe.edu.au). 
+    
+	       [83]: mailto:phimvt@lure.latrobe.edu.au
+		   
+		   
+		       Hits (-H) from Sites (-S)
+			                Jan   Feb   Mar   Apr   May   Jun   Jul   Aug   Sep   Oct   Nov   Dec
+    2004-H  6207  5283
+	        -S  1245  1239
+			    2003-H  6177  4996 15303 20663 15343  4632  4638  2590  5218    NA    NA  4422
+        -S  1083   786  1149  1882  1541  1029   970   566  1144    NA    NA  1128
+    2002-H  3034  4326  4141  2920  4509  3619  3244  4893  1784    NA    NA  2931
+        -S   512   608   621   563   920   680   585   703   341    NA    NA  1217
+    2001-H                                                  6930  6147  2903  5742
+        -S                                                         679   458   889
+    
