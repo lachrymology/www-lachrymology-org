@@ -14,7 +14,7 @@ author_link: http://www.fogus.me
   * 18-MAR-05 (Sec 2, "Lazy lists as reproducing programs" 
   * 14-FEB-05 (Sec 2) "The annoying quadratic formula" 
   * 23-JUN-03 (Sec 2) "Fast small truth tables" (using Joy sets) 
-  * 07-MAY-03 (Sec 2) "Nested Recursion" [also (Sec 3) new interp.c] 
+  * 07-MAY-03 (Sec 2) "Nested Recursion" (also (Sec 3) new interp.c)
   * 23-APR-03 (Sec 2) Revised Paper 9: "The current implementation" 
   * 17-MAR-03 Modules: changes to globals.h, main.c, scan.c utils.c (Sec 3)  
 [modtst.joy][2] and [modtst.out][3] output. 
@@ -239,9 +239,6 @@ with [grmtst.joy][75] test file and [grmtst.out][76] output
    [76]: joy/grmtst.out
    [77]: http://www.groups.yahoo.com/group/concatenative/files/rabbit
    [78]: http://www.groups.yahoo.com/group/concatenative/files/mandel.html
-
-  * [joylibs.tar.gz][79] (01-NOV-01) gzipped tar file of all *.joy libraries and miscellaneous files. 
-
    [79]: joy/joylibs.tar.gz
 
 # 4. Mailing group "concatenative"
@@ -261,10 +258,8 @@ Back to homepage for [Manfred von Thun][82]
 
    [82]: index.html
 
-Mailto: [Manfred von Thun][83] (email: phimvt@lure.latrobe.edu.au). 
+Mailto: Manfred von Thun (email: phimvt@lure.latrobe.edu.au)
     
-       [83]: mailto:phimvt@lure.latrobe.edu.au
-
 
     Hits (-H) from Sites (-S)
              Jan   Feb   Mar   Apr   May   Jun   Jul   Aug   Sep   Oct   Nov   Dec
