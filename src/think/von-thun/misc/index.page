@@ -6,5 +6,16 @@ author: Fogus
 author_link: http://www.fogus.me
 ---
 
-TODO
+This collection of miscelleous bits and pieces is still under development. 
 
+## Deductive Logic
+
+[ Extended propositional logic written in itself][1]
+
+   [1]: misc/epl.html
+
+## Computation
+
+[ A queue machine for evaluating expressions][2]
+
+   [2]: misc/queue.html
