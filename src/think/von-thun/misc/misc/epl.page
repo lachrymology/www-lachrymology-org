@@ -1,3 +1,11 @@
+---
+title: EPL
+created: 2013.05.06
+last_modified: 2013.05.07
+author: Fogus
+author_link: http://www.fogus.me
+---
+
 By Manfred von Thun 
 
 **Abstract**: Propositonal logic is not adequate to express its own semantics. This paper explores additional operators which enable an extended propositonal logic to express its own semantics. In order to be able to write an interpreter of classical propositional logic in its own language, it is necessary to add a few operators which are not truthfunctional. The meaning of the old and the new operators has to be explained in terms of themselves. Several related solutions to the required extensions are offered in this paper, and PROLOG implementations are given. All the extensions are based on the method of semantic trees. In one of the extensions a reflective method - making the program inspect itself - is used to implement an optimisation which delays branching and hence keeps the trees smaller. 

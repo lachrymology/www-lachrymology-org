@@ -1,3 +1,11 @@
+---
+title: Queue
+created: 2013.05.06
+last_modified: 2013.05.07
+author: Fogus
+author_link: http://www.fogus.me
+---
+
 **Abstract**: Here I summarise some woefully incomplete thoughts on on a topic to which I will not be able to devote more time, in the hope that somebody might want to develop it. This note examines the possibility of using a **queue machine** for evaluating expressions. This is contrasted with using in-place rewriting of expressions and with using a stack machine. It is shown that queue evaluation is possible, and it is argued that it might be worth considering as a technique of memory management for array languages. 
 
 Contents: 
