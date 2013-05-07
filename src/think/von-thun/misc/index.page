@@ -1,7 +1,7 @@
 ---
 title: Miscellanea
 created: 2013.04.11
-last_modified: 2013.04.11
+last_modified: 2013.05.07
 author: Fogus
 author_link: http://www.fogus.me
 ---
@@ -10,12 +10,12 @@ This collection of miscelleous bits and pieces is still under development.
 
 ## Deductive Logic
 
-[ Extended propositional logic written in itself][1]
-
-   [1]: misc/epl.html
+[Extended propositional logic written in itself][1]
 
 ## Computation
 
-[ A queue machine for evaluating expressions][2]
+[A queue machine for evaluating expressions][2]
 
-   [2]: misc/queue.html
+
+[1]: misc/epl.html
+[2]: misc/queue.html
