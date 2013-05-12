@@ -1,8 +1,12 @@
 ---
-title: Beings
+title: Beings - Knowledge as interacting experts
 created: 2013.05.11
 last_modified: 2013.05.11
 author: Fogus
 author_link: http://www.fogus.me
 ---
 
+Abstract 
+========
+
+Knowledge may be organized as a community of interacting modules Each module is granted a complex structure, to simulate a particular expert in some small domain An extended analogy is drawn to a group of cooperating human specialists. Based on this, an internal constraint is imposed on the modules. Then structure must be standard over the entire community. Some advantages of a uniform formalism are thereby preserved. An experimental community was implemented for the task domain of automatic programming. It has managed to synthesize a few inductive inference LISP programs, nonformally, from specific restricted dialogues with a human user
