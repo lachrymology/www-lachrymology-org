@@ -27,3 +27,6 @@ How could Beings do this? There would be some little program containing informat
 
 [^3]: Self-optimizing!
 
+An experimental system, PUP6, was designed and partially implemented. PUP6 synthesized a concept formation program (similar to [7]). but the user, who is human, must come up with certain specific answers to some of the Beings' critical queries. A grammatical inference program and a simple property list maintenance routine were also generated. A few new Beings had to be added to PUP6 to synthesize them.
+
+
