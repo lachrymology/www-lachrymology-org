@@ -38,12 +38,12 @@ The input/output behavior of the desired concept formation program is specified 
 
 Externally, the concept formation task can be specified as follow: pictures of structures (but out of simple geometrical shapes) will he presented one after another. For each such scene, the concept formation program, call it CF, must guess its name. The presenter will then reveal the correct name of the structure. C.F must quickly learn to identify simple structures (`ARCH`, `TOWER`), and must never make the same mistake twice in a row. Assume, as given, a process which extracts a description of a visual scene.
 
-O ur group of expeits are given this specification for CF
-Assume that the usei (the financial sponsor) is available for
-lesolvmg important questions, via messenger, and he may in
-fact ask questions of the group Whenever an expert speaks,
-almost all the others in the room heai him Usually only a
+Our group of experts are given this specification for CF.
+Assume that the user (the financial sponsor) is available for
+resolving important questions, via messenger, and he may in
+fact ask questions of the group. Whenever an expert speaks,
+almost all the others in the room hear him. Usually only a
 few can benefit from what he says, and fewer still care to
-react The conversation in the room might go something like
+react. The conversation in the room might go something like
 the following (the suggestive names of the experts are of
-course comcidental)
+course coincidental):
