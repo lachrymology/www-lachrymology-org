@@ -6,7 +6,7 @@ author: Fogus
 author_link: http://www.fogus.me
 ---
 
-Abstract 
+Abstract
 ========
 
 Knowledge may be organized as a community of interacting modules Each module is granted a complex structure, to simulate a particular expert in some small domain An extended analogy is drawn to a group of cooperating human specialists. Based on this, an internal constraint is imposed on the modules. Then structure must be standard over the entire community. Some advantages of a uniform formalism are thereby preserved. An experimental community was implemented for the task domain of automatic programming. It has managed to synthesize a few inductive inference LISP programs, nonformally, from specific restricted dialogues with a human user.
@@ -36,12 +36,4 @@ The next section illustrates how the experts might have cooperated on the task o
 
 The input/output behavior of the desired concept formation program is specified in this section, and we eavesdrop on a simulated group of specialists as they get to work on writing it. As the presentation of the experts' activities becomes more specific, the readers' currently vague conception of Beings will be made less amorphous (because Beings are constrained to carry on approxtmately the same discussion as the expeits below do).
 
-Externally, the concept formation task can be specified as 
-followv pictures of structures (bui out of simple geometrical 
-shapps) will he preser ne after anothei For each such 
-scene, the concept foimauon piogiam, tall it CF. must guess 
-its name The piesentrr will then tevral the conect name of 
-the stMictuir. C.F must quickly learn to identify simple 
-structures (ARCH. TOWER) , and must never make the 
-same mistake twice in a row Assume, as given, a process 
-which extracts a clesciiption of a visual scene.
+Externally, the concept formation task can be specified as follow: pictures of structures (but out of simple geometrical shapes) will he presented one after another. For each such scene, the concept formation program, call it CF, must guess its name. The presenter will then reveal the correct name of the structure. C.F must quickly learn to identify simple structures (`ARCH`, `TOWER`), and must never make the same mistake twice in a row. Assume, as given, a process which extracts a description of a visual scene.
