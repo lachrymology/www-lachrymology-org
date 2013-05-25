@@ -76,3 +76,14 @@ Our group of experts are given this specification for CF.Assume that the user (t
  
  * *PGM MANAGER:* They are `INFO-OBTAINER`, `INFO-USER`, 
    `PGMMER`, and `ANALYST`.
+ 
+ * *CHOOSER:* You four experts each must justify to me why 
+   you should take control now.
+   - **INFO-OBTAINER** We already have some unused information, 
+     so I guess I can wait.
+   - **INFO-USER** Let me have the floor! I know what to do 
+     with the user's specification.
+   - **PGMMER** Well, I suppose I could set up some "empty" 
+     top-level function, er. 
+   - **ANALYST** Marginal profits accruing from my working 
+     at this point in time do not warrant...
