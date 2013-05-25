@@ -40,44 +40,44 @@ Externally, the concept formation task can be specified as follow: pictures of s
 
 Our group of experts are given this specification for CF.Assume that the user (the financial sponsor) is available for resolving important questions, via messenger, and he may in fact ask questions of the group. Whenever an expert speaks, almost all the others in the room hear him. Usually only a few can benefit from what he says, and fewer still care to react. The conversation in the room might go something like the following (the suggestive names of the experts are of course coincidental):
 
- * *GENL MANAGER:* Can anybody here figure out what to
+ * **GENL MANAGER** Can anybody here figure out what to
    do, what the user's saying? (waves the input/output
    specifications in the air)
 
- * *PGM MANAGER:* I can. He wants a computer program to
+ * **PGM MANAGER** I can. He wants a computer program to
    be written. If somebody will explain the task
    "concept formation" to me a little more clearly,
    I'll delegate it properly.
 
- * *PSYCH:* Permit me to assist you. I know all about
+ * **PSYCH** Permit me to assist you. I know all about
    concept formation. In fact, my master's thesis...
 
- * *PGM MANAGER:* Wait, the user must be told that 
+ * **PGM MANAGER** Wait, the user must be told that 
    we'll be able to handle the job for him.
 
- * *MESSENGER:* Here. I can take that message. Go on with 
+ * **MESSENGER** Here. I can take that message. Go on with 
    your work.
 
- * *PGM MANAGER:* We need a name for this program. 
+ * **PGM MANAGER** We need a name for this program. 
    Somebody get one please.
 
- * *NAMER:* How about "CONCEPT"? Maybe just "CF." Let's 
+ * **NAMER** How about "CONCEPT"? Maybe just "CF." Let's 
    ask the user to decide.
 
- * *MESSENGER:* (panting) I just came back from there! 
+ * **MESSENGER** (panting) I just came back from there! 
    Alright, I'm going... User says to call it "CF."
  
- * *PGM MANAGER:* Now then, I have four people in mind, 
+ * **PGM MANAGER** Now then, I have four people in mind, 
    one of whom must take over now in an important way.
    Each of them always wants to do something different.
  
- * *CHOOSER:* Give me their names and I'll choose the best 
+ * **CHOOSER** Give me their names and I'll choose the best 
    one for you.
  
- * *PGM MANAGER:* They are `INFO-OBTAINER`, `INFO-USER`, 
+ * **PGM MANAGER** They are `INFO-OBTAINER`, `INFO-USER`, 
    `PGMMER`, and `ANALYST`.
  
- * *CHOOSER:* You four experts each must justify to me why 
+ * **CHOOSER** You four experts each must justify to me why 
    you should take control now.
    - **INFO-OBTAINER** We already have some unused information, 
      so I guess I can wait.
