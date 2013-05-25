@@ -52,9 +52,12 @@ Our group of experts are given this specification for CF.Assume that the user (t
  * *PSYCH:* Permit me to assist you. I know all about
    concept formation. In fact, my master's thesis...
 
-P GM MANAGER Wait, the user must be told that we'll be 
-able to handle the job for him 
-MESSENGER Here. I can take that message Go on with 
-your work 
-PGM-MANAGER We need a name for (his program. 
-Somebody get one. please 
+ * *PGM MANAGER:* Wait, the user must be told that 
+   we'll be able to handle the job for him.
+
+ * *MESSENGER:* Here. I can take that message. Go on with 
+   your work.
+
+ * *PGM MANAGER:* We need a name for this program. 
+   Somebody get one please.
+
