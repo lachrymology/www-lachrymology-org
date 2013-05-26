@@ -93,3 +93,15 @@ Our group of experts are given this specification for CF.Assume that the user (t
  
  * **INFO-USER** First thing is for `PSYCH` to tell us how to 
    actually do concept formation.
+ 
+ * **PSYCH** There are several decisions to be made, depending 
+   on what your independent variables and your experimental 
+   setup are. For example, are we studying one individual, or 
+   must our program adapt to simulate many different subjects? 
+   Must stimulus items be just classified, or classified and 
+   ordered, or classified and ordered and metrazed? Are the 
+   scenes left in view indefinitely, or just the current scene, 
+   or is even that one just flashed before the subject for a 
+   limited time? May the subject make written notes? Can he 
+   learn from positive instances of the concepts? From negative
+   instances? Is there to be any positive transfer effect...?
