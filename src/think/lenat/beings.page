@@ -128,4 +128,14 @@ Our group of experts are given this specification for CF.Assume that the user (t
    Now consider the decision about subject specific behavior 
    being required.
    
- * **PSYCH**: 
+ * **PSYCH**: This involves periodically inputting a 
+   description of the human subject.
+   
+ * **CODER**: That would mean adjusting the algorithms based 
+   on a vector of parameters.
+ 
+ * **WHEN-NEXT**: This would probably affect the entire code.
+ 
+ * **DEFER**: I can't defer this decision. Someone resolve it.
+ 
+ * **RESOLVE**: Ask the user about it.
