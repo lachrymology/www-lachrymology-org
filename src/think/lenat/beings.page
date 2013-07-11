@@ -111,9 +111,21 @@ Our group of experts are given this specification for CF.Assume that the user (t
    can wait.  Consider the decision about the task being,
    classificatory, comparative or metrical.  What is the first 
    situation where that decision really matters?
+ 
  * **WHEN-NEXT**: This involves a list of alternatives.  Who 
    knows about that?
+ 
  * **ALTERNATIVES**: I know a few tricks here.  If all the 
    alternative sequences of activities have the same initial 
    subsequence, then do that common subsequence before 
    making the decision.
+ 
+ * **UTILIZE**: In this case, all three begin by partitioning a 
+   domain of elements.
+ 
+ * **DEFER**: Temporarily, replace the task CF by the task of 
+   partitioning a domain. (*The user is informed of this.*) 
+   Now consider the decision about subject specific behavior 
+   being required.
+   
+ * **PSYCH**: 
