@@ -216,4 +216,5 @@ CF's current model for an arch might be:
 	MAY        (Green a) (Wedge c) (Prism a) (Block b)
 	           (Parallel a b) (Red a) (Red b)
 
-Each time it is confronted by a new scene, CF must scan its models until it finds one which matches it.  A model is said to match a scene if all the MUST features asscoiated with that model are observed in the scene, and all the MUSTNOT features are absent from the scene.  CF informs the user of this guess, and accepts the proper name.  If it guessed incorrectly, CF modifies its models.  
+Each time it is confronted by a new scene, CF must scan its models until it finds one which matches it.  A model is said to match a scene if all the MUST features asscoiated with that model are observed in the scene, and all the MUSTNOT features are absent from the scene.  CF informs the user of this guess, and accepts the proper name.  If it guessed incorrectly, CF modifies its models.  The wrong-guess model may have features added to its MUST of MUSTNOT sets. This is sufficient to prevent CF frmo making the same wrong guess twice in succession.  The correct-name model may have to be modified or (if it's a new name) created and inserted into the list of models, to ensure that CF will eventually learn that concept.  A *concept* here simply means a model, i.e., all scenes having a given name.
+
