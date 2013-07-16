@@ -201,4 +201,19 @@ A complete script, like the above, was constructed by hand.  In the sequel, this
 
 One of the experts at the simulated meeting must have read P. Winston's dissertation [7] because CF, the synthesized concept formation program was remarkably similar to the one theorem described.  CF has a much simpler graph-matching algorithm and relations on relations are stored in a different way than simple relations on objects.  Since CF was later synthesized bu PUP6, the programmed pool of Beings, it is worth detailing here.
 
-CF repeatedly scans a scene and tries to name it. As a first step, the scene is broken into a set of objects and a set of features (relations on those objects).  CF maintains a model for each differently named scene it has encountered.  
+CF repeatedly scans a scene and tries to name it. As a first step, the scene is broken into a set of objects and a set of features (relations on those objects).  CF maintains a model for each differently named scene it has encountered.  A model contains a description of the objects one expects in such a structure, a set of features which *must not* be present if the scene is the have this namem and a set of features which *may be* present or absent.  Thus a model is an archetypal scene plus a name.  For example, part of a scene might be described as:
+
+    OBJECTS:   a,b,c,d
+    RELATIONS: (Green a) (Blue c) (Touches c d) 
+               (Supports a c) (Supports b c)
+
+CF's current model for an arch might be:
+
+    NAME       Arch
+	OBJECTS    a,b,c
+	MUST       (Supports a c) (Supports b c)
+	MUSTNOT    (Touches a b)
+	MAY        (Green a) (Wedge c) (Prism a) (Block b)
+	           (Parallel a b) (Red a) (Red b)
+
+Each time it is confronted by a new scene, CF must scan its models until it finds one which matches it.  A model is said to match a scene if all the MUST features asscoiated with that model are observed in the scene, and all the MUSTNOT features are absent from the scene.  CF informs the user of this guess, and accepts the proper name.  If it guessed incorrectly, CF modifies its models.  
