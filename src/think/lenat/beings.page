@@ -156,4 +156,41 @@ Our group of experts are given this specification for CF.Assume that the user (t
  * **PGM-MANAGER**: Do any of the other three experts I 
    mentioned earlier want to speak now?
    
- * **
+ * **PGMMER**: Yes I think that the top-level function CF can 
+   now be coded.
+   
+ * **CODER**: Give me the arguments and the body of the code. 
+
+ * **PGMMER**: There are no known arguments The body is a 
+   call on PARTITION DOMAIN.
+   
+  * **CODER**: Okay I will precede that with a call to an 
+    INITIALIZE function, and follow it with a call to a 
+    FINALIZE function, which are both defined as NIL for 
+    now Is PARTITION-DOMAIN simple enough to be 
+    composed light now and filled in here?
+	
+  * **MATHEMATICIAN**: No way Any realizate...
+  
+  * **CODER**: Uh, thanks There The function CF is defined as: 
+    `(LAMBDA () (INITIALIZE) (PARTITION-DOMAIN) (FINALIZE))`.
+	
+  * **ANALYST**: Remind me to examine the initialization and 
+    finalization functions at the end of our task. If either 
+    function is still null, it will be deleted.
+	
+  * **WARNER**: I have just put that note into the code for CF as 
+    a comment of type "demon."
+
+  * **PGMMER**: Can someone advise me of what else to do to 
+    finish defining this function?
+	
+  * **PGM-MANAGER**: Each function should have a proper 
+    name Show the user the names you have picked, and let 
+    him choose other ones if he prefers.
+	
+  * **MESSENGER**: Okay The user agrees to all 3 names. 
+
+  * **INFO-USER**: Somebody, please tell the group how to do 
+    partitioning of a space of examples.
+
