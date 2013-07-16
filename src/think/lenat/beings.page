@@ -195,3 +195,9 @@ Our group of experts are given this specification for CF.Assume that the user (t
     partitioning of a space of examples.
 
 A complete script, like the above, was constructed by hand.  In the sequel, this will be refered to as the protocol. In all, 87 different experts were called for: 17 specificaly dealing with inductive inference tasks, and 70 dealing with programming, managing workers, and communicating with the user.  Near the end of the protocol, the user is asked which of the three types of concept formation CF is supposed to do.  He responds "CLASSIFICATORY only", and the experts discover that they are finished.  All the newly created code is dumped out onto a fresh file.  After hundreds of pages, a concept formation progtam meeting the user's specifications had been written.  The next section will describe that program in detail.
+
+3. The Program the Experts Wrote
+================================
+
+One of the experts at the simulated meeting must have read P. Winston's dissertation [7] because CF, the synthesized concept formation program was remarkably similar to the one theorem described.  CF has a much simpler graph-matching algorithm and relations on relations are stored in a different way than simple relations on objects.  Since CF was later synthesized bu PUP6, the programmed pool of Beings, it is worth detailing here.
+
