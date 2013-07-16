@@ -139,3 +139,21 @@ Our group of experts are given this specification for CF.Assume that the user (t
  * **DEFER**: I can't defer this decision. Someone resolve it.
  
  * **RESOLVE**: Ask the user about it.
+
+ * **ASK-USER**: Phrase this as a yes/no question. Explain each 
+   alternative to the user.
+ 
+ * **MESSENGER**: That's my job. <types on teletype> User says 
+   no, don't simulate different people.
+   
+ * **DEFER**: The next decision. 
+   *Eleven decisions are ultimately proposed by PSYCH,
+   and all but one are deferred*
+   
+ * **INFO-USER**: I have no objections now if someone wants the 
+   floor.
+ 
+ * **PGM-MANAGER**: Do any of the other three experts I 
+   mentioned earlier want to speak now?
+   
+ * **
