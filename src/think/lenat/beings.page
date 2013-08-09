@@ -269,5 +269,7 @@ Section 5 classifies the effects of constraining that `Q` be constant (over all 
 
 A set of 29 ubiquitous questions were chosen, representing everything one expert might want to ask another.  At least, they naturally encompass those questions which were asked during the simulated meeting, hence should be sufficient for generating CF.  `Q`, this universal set of Being parts is listed in Appendix I.  The reader is urged to glance at this now, and refer to it whenever a Being part is specifically mentioned.
 
-Each of the 100 Beings in PUP6 should have had a value for each pait (in reality, only 40%. of these 2900 slots weie filled in, only 30% were actually neceuaiy to generate ( I ) A value for a pait is simply a LISP pmgiam which can answer that question, otten by asking questions of the same Being. of other Beings, and of the user A pait may also assrit some fact, create or modify some structure (including demons., Beings, and parts of Beings) Appendix I shows the values stored under each part for the typical Being named "INFO-OBIAINEP".
+Each of the 100 Beings in PUP6 should have had a value for each part (in reality, only 40%. of these 2900 slots were filled in, only 30% were actually necessary to generate CF).  A value for a part is simply a LISP pmgiam which can answer that question, often by asking questions of the same Being, of other Beings, and of the user.  A part may also assert some fact, create or modify some structure (including demons, Beings, and parts of Beings).  Appendix I shows the values stored under each part for the typical Being named "INFO-OBTAINER".
+
+
 
