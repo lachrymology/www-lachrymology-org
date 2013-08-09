@@ -235,5 +235,7 @@ Once again the concept of a pool of Beings is that many entities coexist, each h
 
 How can we test out this idea? We must build a pool of Beings, a modular program which will interact with a human user and generate the CF program.  Recasting the idea into operational terms, we arrive at this procedure for writing a pool of Beings.
 
+ 1. Study the task which the pool is to do.  See what kinds of questions are asked by simulated experts.
 
+ 2. 
 
