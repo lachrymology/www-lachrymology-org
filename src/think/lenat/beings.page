@@ -222,3 +222,8 @@ Suppose that the target program reads in the above scene fragment and tries to m
 
 If the user denies that the scene is an arch, CF sees if there are any retations in the ARCH model's MAY set which do not occur in the scene.  If so, one of them (e.g. (PARALLEL a b)) will be transfered from the MAY to the MUST set.  If no such feature existed, the program would look for a feature present in the scene but not mentioned in any set of the ARCH model (eg. (TOUCHES c d)), and insert it into the MUSTNOT set.  In either case, the user would be asked what the true name was, and that model would have its MAY set augmented by any new features in the scene and by any features not the true-name model's MUST or MUSTNOT sets which contradicted the scene.
 
+4. Anatomy of Synergetic Cooperation
+====================================
+
+Conwdei the buth uf one small ea necessary in the writing of C.F (eg. that of classifying a model's features into three categaties (MUST . MUSl'NUT , MAY)) No single specialist at the mrrting rould have had this idea by himself How do intellects mesh, effectively comniuiiKate, and unite then powersm' A tentative mechanism, which barely scratches the smfate of this mystery, will be hypothesized The Beings in PUP6 embody this concept, and are able to reproduce both the experts' discussion and the final CF program.
+
