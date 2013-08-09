@@ -247,7 +247,19 @@ How can we test out this idea? We must build a pool of Beings, a modular program
    simply pushed down into the valuesof one or two general catchall
    questions (all first-order logical languages do this).
 
-3. List all the Beings who will be present in the pool, and fill in their parts.  The time to encode knowledge inot many simple representation schemes is proportional to the square of (occassionally exponential in) the ammount of interrelated knowledge (e.g. consider the frame problem).  The filling in of a new Being is independent of the number of Beings already in the pool, because Beings can communicate via non-deterministic goal mechanisms, and not to know the names of the Beings who will answer their queries.  This filling in is *linear* in the number of Beings parts listed in `Q`; all parts of all Beings must be (at least should be) filled in.  
+3. List all the Beings who will be present in the pool, and fill in
+   their parts.  The time to encode knowledge inot many simple
+   representation schemes is proportional to the square of
+   (occassionally exponential in) the ammount of interrelated
+   knowledge (e.g. consider the frame problem).  The filling in of a
+   new Being is independent of the number of Beings already in the
+   pool, because Beings can communicate via non-deterministic goal
+   mechanisms, and not to know the names of the Beings who will answer
+   their queries.  This filling in is *linear* in the number of Beings
+   parts listed in `Q`; all parts of all Beings must be (at least
+   should be) filled in.
+
+
 
 
 
