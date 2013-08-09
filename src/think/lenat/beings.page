@@ -271,5 +271,5 @@ A set of 29 ubiquitous questions were chosen, representing everything one expert
 
 Each of the 100 Beings in PUP6 should have had a value for each part (in reality, only 40%. of these 2900 slots were filled in, only 30% were actually necessary to generate CF).  A value for a part is simply a LISP pmgiam which can answer that question, often by asking questions of the same Being, of other Beings, and of the user.  A part may also assert some fact, create or modify some structure (including demons, Beings, and parts of Beings).  Appendix I shows the values stored under each part for the typical Being named "INFO-OBTAINER".
 
-
+The set of parts breaks into three rough categories (1) those parts which are useful in deciding which Being gets control, (2) those which are used once the Being gains control, and (3) those useful only to answer the user's questions and keep him oriented.  The next section describes categories 1 and 2, the section after that explicates the third categoiy of Being parts.
 
