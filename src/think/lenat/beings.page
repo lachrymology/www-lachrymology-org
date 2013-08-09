@@ -235,7 +235,17 @@ Once again the concept of a pool of Beings is that many entities coexist, each h
 
 How can we test out this idea? We must build a pool of Beings, a modular program which will interact with a human user and generate the CF program.  Recasting the idea into operational terms, we arrive at this procedure for writing a pool of Beings.
 
- 1. Study the task which the pool is to do.  See what kinds of questions are asked by simulated experts.
+1. Study the task which the pool is to do.  See what kinds of  
+   questions are asked by simulated experts.
 
- 2. 
+2. Distill this into a core of sample questions `Q` in such a way
+   that each inter-expert questions or transfer of control can be
+   rephrased in terms of `Q`.  The size of `Q` is very important. 
+   If `Q` is too large, addition of new Beings will demand either 
+   great effort or great intelligence (an example of a system like
+   this is ACTORS).  If `Q` is too small, all the near-uniformity is
+   simply pushed down into the valuesof one or two general catchall
+   questions (all first-order logical languages do this).
+
+3. 
 
