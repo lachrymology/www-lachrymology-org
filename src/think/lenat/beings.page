@@ -284,5 +284,9 @@ How does each Being decide which parts to evaluate, and in which order, once it 
 
 _Assembling a Being into an executable function_
 
-When a Being `B` first gains control, its `EXPLICIT-ARGS` are bound.  The `IMPLICIT-ARGS` are initialized, the `B` is pushed onto the Being control stack, and any newly activated `DEMONS` are so tagged.  The Being who called `B` should have explained his reasons by assigning some phrase to the variable `BECAUSE`.  This reason is now stored as a special sub-part of the `WHY` part of `B`.  `BECAUSE` is rebound periodically in the `META-CODE` and `COMMENTS` to keep current the explanation of each call that `B` makes.  Each `ARG-CHECK` predicate is evaluated.  If any returns `NIL` 
+When a Being `B` first gains control, its `EXPLICIT-ARGS` are bound.  The `IMPLICIT-ARGS` are initialized, the `B` is pushed onto the Being control stack, and any newly activated `DEMONS` are so tagged.  The Being who called `B` should have explained his reasons by assigning some phrase to the variable `BECAUSE`.  This reason is now stored as a special sub-part of the `WHY` part of `B`.  `BECAUSE` is rebound periodically in the `META-CODE` and `COMMENTS` to keep current the explanation of each call that `B` makes.  Each `ARG-CHECK` predicate is evaluated.  If any returns `NIL` the entire Being reports that it has failed; otherwise, the `PRE-REQUISITES` are examined.  Effort is expemded to make them true, that are currently not satisfied.  Each `COMMENT` is evaluated, then the `CO-REQUISITES`, `META-CODE` and the current demons are executed in pseudo-parallel.  Each `POST-REQUISITE` is then examined, and an effort made to satisfy it.  The newly-activated demons are exorcised, `B` is popped from the Being control stack, and the value computed by the `META-CODE` is returned.  Some heuristics were devised to take advantage of the fact that the Beings often didn't need many of its standard parts.  Fo example, `INFO-OBTAINER` has no new deomns or co-requisites, so no parallel processing need be simulated.
+
+5.2 Keeping the user informed
+-----------------------------
+
 
