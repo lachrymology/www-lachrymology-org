@@ -1,3 +1,0 @@
-default_processing_pipeline:
-  Page: erb,tags,maruku,blocks,fragments
-  Template: erb,tags,blocks,head,tidy

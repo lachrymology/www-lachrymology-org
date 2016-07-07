@@ -1,4 +1,4 @@
---- pipeline:erb,tags,blocks,head
+--- pipeline:erb,tags,blocks
 <!DOCTYPE html>
 <html lang="en"> 
   <head>

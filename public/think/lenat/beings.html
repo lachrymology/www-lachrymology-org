@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en"> 
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>Beings - Knowledge as interacting experts</title>
+    <link href='http://fonts.googleapis.com/css?family=Cardo:400,700,400italic' rel='stylesheet' type='text/css'>
+
+    <link type="text/css" rel="stylesheet" media="all" href="../../default.css" />
+  </head>
+
+  <body>
+    <div id="body">
+      <div id="content">
+
+	<h1><a href="/">lachrymology</a></h1>
+
+	<ul id="posts">
+	  <li class="post">
+	    <div class="post-body text-post">
+	      <h3>Beings - Knowledge as interacting experts</h3>
+	      
+<h1 id="abstract">Abstract</h1>
+
+<p>Knowledge may be organized as a community of interacting modules Each module is granted a complex structure, to simulate a particular expert in some small domain An extended analogy is drawn to a group of cooperating human specialists. Based on this, an internal constraint is imposed on the modules. Then structure must be standard over the entire community. Some advantages of a uniform formalism are thereby preserved. An experimental community was implemented for the task domain of automatic programming. It has managed to synthesize a few inductive inference LISP programs, nonformally, from specific restricted dialogues with a human user.</p>
+
+<ol>
+  <li>
+    <h1 id="experts-and-beings">Experts and Beings</h1>
+  </li>
+</ol>
+
+<p>Consider an interdisciplinary enterprise, attempted by a community of human experts who are specialists in - and only in - their own fields. What modes of interactions will be productive? The dominant paradigm might well settle into questioning and answering each other. Instead of a chairman, suppose the group adopts rules for gaining the floor, what a speaker may do, and how to resolve disputes. When a topic is being considered, one or two experts might recognize it and speak up. In the course of their exposition they might need to call on other specialists. This might be by name, by specialty, or simply by posing a new sub-question and hoping someone rould recognize his own relevance and volunteer a suggestion. Such transfers would be more common at the beginning, when the task is (by assumption) too general for any one member to comprehend. As the questions form on more specific issues, single individuals should be able to supply complete solutions. If the task is to construct something, then the activities of the experts should not be strictly verbal. Often, one will recognize his relevance to the current situation and ask to <em>do</em> something, clarify or modify or (rarely) create.</p>
+
+<p>What would it mean to simulate the above activity? Imagine several little programs, each one modelling a different expert. What should each program, called a <em>Being</em>, be capable of. It must possess a corpus of specific facts and strategies for its designated speciality. It must interact via questioning and answering other Beings. Each Being should be able to recognize when it is relevant. It must set up and alter structures, just as the human specialists do.</p>
+
+<p>Let us return to our meeting of human experts. To be more concrete, suppose their task is to design and code a large computer program: a concept formation system[2]. Experts who will be useful include scientific programmers, non programming psychologists, system hackers, and management personnel. What happens in the ensuing session? When an expert participates, he will either be aiding a colleague in some difficulty or else transferring a tiny, customized bit of his expertise (facts about his field) into a programmed function which can do something.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup> The final code reflects the member’s knowledge, in that sense. One way the session might proceed is for the specialists to actually do the concept formation task. As they become familiar with what part of their own expertise is being called upon, and in what ways, they can begin to isolate it. When it is clear precisely what each is doing, they can take their extracted bits of knowledge, organize them, formalize them, and program them. A conscious effort along these lines was made in [8], where experts gradually replaced themselves by programs. Instead of discussing how to write a speech program, they <em>did</em> speech recognition, until each one could introspect sufficiently into his own activities to formalize them.<sup id="fnref:2"><a href="#fn:2" class="footnote">2</a></sup> For our task, one expects the psychologists to dominate the early discussions, later yielding to programmers. The project sponsor might be passive, submitting a single specification order for the program, or active, paiticipating in the work as a (somewhat priveleged) member of the team. This individual is the one who wants the final product, hence will be called the user.</p>
+
+<p>How could Beings do this? There would be some little program containing information about <code>CONCEPT-FORMATION</code> (much more than would be used in writing any single concept formation program), another Being who knows how to manage a group to <code>WRITE-PROGRAMS</code>, and many lower level specialists, for example <code>INFO-OBTAINER</code>, <code>TEST</code>, <code>MODIFY-DATA-STRUCTURE</code>, <code>UNTIL-LOOP</code>, <code>VISUAL-PERCEPTION</code>, <code>AVOID-CONTRADICTION</code>, <code>PROPOSE-PLAUSIBLE-NAME</code>. Like the human specialists, the Beings would contain far too much infoimation, far too inefficiently represented to be able to say “we ourselves constitute the desired piogtam.” They would have to discuss, and perhaps carry out the concept formation task. They would write specialized versions of themselves, programs which could do exactly what the Beings did to carry out the task, no more not less (although they would hopefully take much less time, be more customized).<sup id="fnref:3"><a href="#fn:3" class="footnote">3</a></sup> This activity is refered to in the sequel as <em>automatic programming</em>. Some Beings (eg, <code>TEST</code>) may have several distinct, streamlined fractions of themselves in the final program. Beings (e.g. <code>PROPOSE-PLAUSIBLE-NAME</code>) which only aided other Beings may not have any correlates in the final synthesized code.</p>
+
+<p>An experimental system, PUP6, was designed and partially implemented. PUP6 synthesized a concept formation program (similar to [7]). but the user, who is human, must come up with certain specific answers to some of the Beings’ critical queries. A grammatical inference program and a simple property list maintenance routine were also generated. A few new Beings had to be added to PUP6 to synthesize them.</p>
+
+<p>The next section illustrates how the experts might have cooperated on the task of writing the concept formation program. Section 3 describes the program they produced. Next comes the Being hypothesis complex but standard anatomy. Later sections explain this, both theoretically and by examining the behavior of the actual PUP6 pool of 100 Beings. The appendix exhibits a typical Being.</p>
+
+<ol>
+  <li>
+    <h1 id="experts-interacting">Experts Interacting</h1>
+  </li>
+</ol>
+
+<p>The input/output behavior of the desired concept formation program is specified in this section, and we eavesdrop on a simulated group of specialists as they get to work on writing it. As the presentation of the experts’ activities becomes more specific, the readers’ currently vague conception of Beings will be made less amorphous (because Beings are constrained to carry on approxtmately the same discussion as the expeits below do).</p>
+
+<p>Externally, the concept formation task can be specified as follow: pictures of structures (but out of simple geometrical shapes) will he presented one after another. For each such scene, the concept formation program, call it CF, must guess its name. The presenter will then reveal the correct name of the structure. C.F must quickly learn to identify simple structures (<code>ARCH</code>, <code>TOWER</code>), and must never make the same mistake twice in a row. Assume, as given, a process which extracts a description of a visual scene.</p>
+
+<p>Our group of experts are given this specification for CF.Assume that the user (the financial sponsor) is available for resolving important questions, via messenger, and he may in fact ask questions of the group. Whenever an expert speaks, almost all the others in the room hear him. Usually only a few can benefit from what he says, and fewer still care to react. The conversation in the room might go something like the following (the suggestive names of the experts are of course coincidental):</p>
+
+<ul>
+  <li>
+    <p><strong>GENL MANAGER</strong> Can anybody here figure out what to
+do, what the user’s saying? (waves the input/output
+specifications in the air)</p>
+  </li>
+  <li>
+    <p><strong>PGM MANAGER</strong> I can. He wants a computer program to
+be written. If somebody will explain the task
+“concept formation” to me a little more clearly,
+I’ll delegate it properly.</p>
+  </li>
+  <li>
+    <p><strong>PSYCH</strong> Permit me to assist you. I know all about
+concept formation. In fact, my master’s thesis…</p>
+  </li>
+  <li>
+    <p><strong>PGM MANAGER</strong> Wait, the user must be told that 
+we’ll be able to handle the job for him.</p>
+  </li>
+  <li>
+    <p><strong>MESSENGER</strong> Here. I can take that message. Go on with 
+your work.</p>
+  </li>
+  <li>
+    <p><strong>PGM MANAGER</strong> We need a name for this program. 
+Somebody get one please.</p>
+  </li>
+  <li>
+    <p><strong>NAMER</strong> How about “CONCEPT”? Maybe just “CF.” Let’s 
+ask the user to decide.</p>
+  </li>
+  <li>
+    <p><strong>MESSENGER</strong> (panting) I just came back from there! 
+Alright, I’m going… User says to call it “CF.”</p>
+  </li>
+  <li>
+    <p><strong>PGM MANAGER</strong> Now then, I have four people in mind, 
+one of whom must take over now in an important way.
+Each of them always wants to do something different.</p>
+  </li>
+  <li>
+    <p><strong>CHOOSER</strong> Give me their names and I’ll choose the best 
+one for you.</p>
+  </li>
+  <li>
+    <p><strong>PGM MANAGER</strong> They are <code>INFO-OBTAINER</code>, <code>INFO-USER</code>, 
+<code>PGMMER</code>, and <code>ANALYST</code>.</p>
+  </li>
+  <li><strong>CHOOSER</strong> You four experts each must justify to me why 
+you should take control now.
+    <ul>
+      <li><strong>INFO-OBTAINER</strong> We already have some unused information, 
+so I guess I can wait.</li>
+      <li><strong>INFO-USER</strong> Let me have the floor! I know what to do 
+with the user’s specification.</li>
+      <li><strong>PGMMER</strong> Well, I suppose I could set up some “empty” 
+top-level function, er. </li>
+      <li><strong>ANALYST</strong> Marginal profits accruing from my working 
+at this point in time do not warrant…</li>
+    </ul>
+  </li>
+  <li>
+    <p><strong>CHOOSER</strong> Okay, <code>INFO-USER</code>, you seem to be the only 
+relevant expert </p>
+  </li>
+  <li>
+    <p><strong>INFO-USER</strong> First thing is for <code>PSYCH</code> to tell us how to 
+actually do concept formation.</p>
+  </li>
+  <li>
+    <p><strong>PSYCH</strong> There are several decisions to be made, depending 
+on what your independent variables and your experimental 
+setup are. For example, are we studying one individual, or 
+must our program adapt to simulate many different subjects? 
+Must stimulus items be just classified, or classified and 
+ordered, or classified and ordered and metrazed? Are the 
+scenes left in view indefinitely, or just the current scene, 
+or is even that one just flashed before the subject for a 
+limited time? May the subject make written notes? Can he 
+learn from positive instances of the concepts? From negative
+instances? Is there to be any positive transfer effect…?</p>
+  </li>
+  <li>
+    <p><strong>DEFER</strong>: Hold on here, we can’t swamp the user with lots of
+unnecessary questions.  Let’s go through each one and see if it
+can wait.  Consider the decision about the task being,
+classificatory, comparative or metrical.  What is the first 
+situation where that decision really matters?</p>
+  </li>
+  <li>
+    <p><strong>WHEN-NEXT</strong>: This involves a list of alternatives.  Who 
+knows about that?</p>
+  </li>
+  <li>
+    <p><strong>ALTERNATIVES</strong>: I know a few tricks here.  If all the 
+alternative sequences of activities have the same initial 
+subsequence, then do that common subsequence before 
+making the decision.</p>
+  </li>
+  <li>
+    <p><strong>UTILIZE</strong>: In this case, all three begin by partitioning a 
+domain of elements.</p>
+  </li>
+  <li>
+    <p><strong>DEFER</strong>: Temporarily, replace the task CF by the task of 
+partitioning a domain. (<em>The user is informed of this.</em>) 
+Now consider the decision about subject specific behavior 
+being required.</p>
+  </li>
+  <li>
+    <p><strong>PSYCH</strong>: This involves periodically inputting a 
+description of the human subject.</p>
+  </li>
+  <li>
+    <p><strong>CODER</strong>: That would mean adjusting the algorithms based 
+on a vector of parameters.</p>
+  </li>
+  <li>
+    <p><strong>WHEN-NEXT</strong>: This would probably affect the entire code.</p>
+  </li>
+  <li>
+    <p><strong>DEFER</strong>: I can’t defer this decision. Someone resolve it.</p>
+  </li>
+  <li>
+    <p><strong>RESOLVE</strong>: Ask the user about it.</p>
+  </li>
+  <li>
+    <p><strong>ASK-USER</strong>: Phrase this as a yes/no question. Explain each 
+alternative to the user.</p>
+  </li>
+  <li>
+    <p><strong>MESSENGER</strong>: That’s my job. <types on="" teletype=""> User says 
+no, don't simulate different people.</types></p>
+  </li>
+  <li>
+    <p><strong>DEFER</strong>: The next decision. 
+<em>Eleven decisions are ultimately proposed by PSYCH,
+and all but one are deferred</em></p>
+  </li>
+  <li>
+    <p><strong>INFO-USER</strong>: I have no objections now if someone wants the 
+floor.</p>
+  </li>
+  <li>
+    <p><strong>PGM-MANAGER</strong>: Do any of the other three experts I 
+mentioned earlier want to speak now?</p>
+  </li>
+  <li>
+    <p><strong>PGMMER</strong>: Yes I think that the top-level function CF can 
+now be coded.</p>
+  </li>
+  <li>
+    <p><strong>CODER</strong>: Give me the arguments and the body of the code. </p>
+  </li>
+  <li>
+    <p><strong>PGMMER</strong>: There are no known arguments The body is a 
+call on PARTITION DOMAIN.</p>
+  </li>
+  <li>
+    <p><strong>CODER</strong>: Okay I will precede that with a call to an 
+INITIALIZE function, and follow it with a call to a 
+FINALIZE function, which are both defined as NIL for 
+now Is PARTITION-DOMAIN simple enough to be 
+composed light now and filled in here?</p>
+  </li>
+  <li>
+    <p><strong>MATHEMATICIAN</strong>: No way Any realizate…</p>
+  </li>
+  <li>
+    <p><strong>CODER</strong>: Uh, thanks There The function CF is defined as: 
+<code>(LAMBDA () (INITIALIZE) (PARTITION-DOMAIN) (FINALIZE))</code>.</p>
+  </li>
+  <li>
+    <p><strong>ANALYST</strong>: Remind me to examine the initialization and 
+finalization functions at the end of our task. If either 
+function is still null, it will be deleted.</p>
+  </li>
+  <li>
+    <p><strong>WARNER</strong>: I have just put that note into the code for CF as 
+a comment of type “demon.”</p>
+  </li>
+  <li>
+    <p><strong>PGMMER</strong>: Can someone advise me of what else to do to 
+finish defining this function?</p>
+  </li>
+  <li>
+    <p><strong>PGM-MANAGER</strong>: Each function should have a proper 
+name Show the user the names you have picked, and let 
+him choose other ones if he prefers.</p>
+  </li>
+  <li>
+    <p><strong>MESSENGER</strong>: Okay The user agrees to all 3 names. </p>
+  </li>
+  <li><strong>INFO-USER</strong>: Somebody, please tell the group how to do 
+partitioning of a space of examples.</li>
+</ul>
+
+<p>A complete script, like the above, was constructed by hand.  In the sequel, this will be refered to as the protocol. In all, 87 different experts were called for: 17 specificaly dealing with inductive inference tasks, and 70 dealing with programming, managing workers, and communicating with the user.  Near the end of the protocol, the user is asked which of the three types of concept formation CF is supposed to do.  He responds “CLASSIFICATORY only”, and the experts discover that they are finished.  All the newly created code is dumped out onto a fresh file.  After hundreds of pages, a concept formation progtam meeting the user’s specifications had been written.  The next section will describe that program in detail.</p>
+
+<ol>
+  <li>
+    <h1 id="the-program-the-experts-wrote">The Program the Experts Wrote</h1>
+  </li>
+</ol>
+
+<p>One of the experts at the simulated meeting must have read P. Winston’s dissertation [7] because CF, the synthesized concept formation program was remarkably similar to the one theorem described.  CF has a much simpler graph-matching algorithm and relations on relations are stored in a different way than simple relations on objects.  Since CF was later synthesized bu PUP6, the programmed pool of Beings, it is worth detailing here.</p>
+
+<p>CF repeatedly scans a scene and tries to name it. As a first step, the scene is broken into a set of objects and a set of features (relations on those objects).  CF maintains a model for each differently named scene it has encountered.  A model contains a description of the objects one expects in such a structure, a set of features which <em>must not</em> be present if the scene is the have this namem and a set of features which <em>may be</em> present or absent.  Thus a model is an archetypal scene plus a name.  For example, part of a scene might be described as:</p>
+
+<pre><code>OBJECTS:   a,b,c,d
+RELATIONS: (Green a) (Blue c) (Touches c d) 
+           (Supports a c) (Supports b c)
+</code></pre>
+
+<p>CF’s current model for an arch might be:</p>
+
+<pre><code>NAME       Arch
+OBJECTS    a,b,c
+MUST       (Supports a c) (Supports b c)
+MUSTNOT    (Touches a b)
+MAY        (Green a) (Wedge c) (Prism a) (Block b)
+           (Parallel a b) (Red a) (Red b)
+</code></pre>
+
+<p>Each time it is confronted by a new scene, CF must scan its models until it finds one which matches it.  A model is said to match a scene if all the MUST features asscoiated with that model are observed in the scene, and all the MUSTNOT features are absent from the scene.  CF informs the user of this guess, and accepts the proper name.  If it guessed incorrectly, CF modifies its models.  The wrong-guess model may have features added to its MUST of MUSTNOT sets. This is sufficient to prevent CF frmo making the same wrong guess twice in succession.  The correct-name model may have to be modified or (if it’s a new name) created and inserted into the list of models, to ensure that CF will eventually learn that concept.  A <em>concept</em> here simply means a model, i.e., all scenes having a given name.</p>
+
+<p>Suppose that the target program reads in the above scene fragment and tries to match it to the above ARCH model. The MUST relations should all be present.  Yes, the scene does contain (SUPPORTS a c) and (SUPPORTS b c).  Next, the MUSTNOT relations must be absent from the scene.  Sure enough, (TOUCHES a b) isn’t there.  So the model and scene are consistent, and the program announces that its guess is ARCH.  If the user venues this guess, then the MAY set of the ARCH model is augmented with the relations (BLUE c) and (TOUCHES c d), and the OBJECT S set is augmented with “d.”</p>
+
+<p>If the user denies that the scene is an arch, CF sees if there are any retations in the ARCH model’s MAY set which do not occur in the scene.  If so, one of them (e.g. (PARALLEL a b)) will be transfered from the MAY to the MUST set.  If no such feature existed, the program would look for a feature present in the scene but not mentioned in any set of the ARCH model (eg. (TOUCHES c d)), and insert it into the MUSTNOT set.  In either case, the user would be asked what the true name was, and that model would have its MAY set augmented by any new features in the scene and by any features not the true-name model’s MUST or MUSTNOT sets which contradicted the scene.</p>
+
+<ol>
+  <li>
+    <h1 id="anatomy-of-synergetic-cooperation">Anatomy of Synergetic Cooperation</h1>
+  </li>
+</ol>
+
+<p><strong>Conwdei the buth uf one small ea necessary in the writing of C.F (eg. that of classifying a model’s features into three categaties (MUST . MUSl’NUT , MAY)) No single specialist at the mrrting rould have had this idea by himself How do intellects mesh, effectively comniuiiKate, and unite then powersm’ A tentative mechanism, which barely scratches the smfate of this mystery, will be hypothesized The Beings in PUP6 embody this concept, and are able to reproduce both the experts’ discussion and the final CF program.</strong></p>
+
+<p>Viewing the group of experts as a single entity, what makes it productive? The members must be very different in abilities, in order to handle such a complex task, yet similar in basic cognitive structure (in the anatomy of their minds) to permit facile communications to flow.  For example, each specialist knows how to direct a programmer to do some of the things he can do, but the specific facts each expert has under this category must be quite unique.  Similarly, each member may have a set of strategies for recognizing his own relevance to a proposed question, but the <em>contents</em> of that knowledge varies from individual to individual.  The hypothesis is that all the experts can be said to consist of categorized information, where the set of categories is fairly standard, and indicates the types of questions any expert can be expected to answer.  An expert is considered <em>equivalent</em> to his answers to several standard questions.  Each expert has the same mental “parts”, it is only the values stored in these parts, their contents, which distinguish him as an individual.</p>
+
+<p>Armed with this dubious view of intelligence, let us return to the design of Beings.  Each Being shall have many parts, each possesing a name, (a question it deals with) and a value (a procedure capable of answering that question).  Henceforth. <em>part</em> will be used in this technical sense.  When a Being asks a question, it is really just one part who is asking in fact, it must be that the value subpart of some part can’t answer <em>his</em> question without further assistance.  He may not know enough to call on specific other Beings (so he lets anyone respond who feels relevant), but he should <em>always</em> specify what Being part the question should be answered by.  By analogy with the experts, each Being will have the same <em>universal</em> set of types of parts (will answer the same kinds of queries), and this uniformity should permit painless intercommunication.  Since the paradigm of the meeting is questioning and answering, the names of the parts should cover all the types of questions one expert wants to ask another.  Each part of each Being will have implicit access to this list it may ask only these types of questions.  Each Being should not have access to the list of all Beings in the system requests should be phrased in terms of what is wanted, rarely is the name of the answerer specified in advance. (By analogy, the human speaker is not aware of precisely who is in the room, when he feels inadequate, he asks for help and hopes someone responds) Another point is that Beings are not a recursive concept (like ACTORs [3] are) a part of a Being is a brief collection of knowledge (usually procedural), not another Being, a collection of Beings (also called a community, a pool, the system, or a group) is also not itself a Being.  There are no <em>structured</em> clusters of Beings.</p>
+
+<p>Once again the concept of a pool of Beings is that many entities coexist, each having a complex structure. but that structure does not vary from Being to Being.  This idea has analogues in many fields: transactional analysis in psychology, anatomy in medicine, modular design in architecture.</p>
+
+<p>How can we test out this idea? We must build a pool of Beings, a modular program which will interact with a human user and generate the CF program.  Recasting the idea into operational terms, we arrive at this procedure for writing a pool of Beings.</p>
+
+<ol>
+  <li>
+    <p>Study the task which the pool is to do.  See what kinds of<br />
+questions are asked by simulated experts.</p>
+  </li>
+  <li>
+    <p>Distill this into a core of sample questions <code>Q</code> in such a way
+that each inter-expert questions or transfer of control can be
+rephrased in terms of <code>Q</code>.  The size of <code>Q</code> is very important. 
+If <code>Q</code> is too large, addition of new Beings will demand either 
+great effort or great intelligence (an example of a system like
+this is ACTORS).  If <code>Q</code> is too small, all the near-uniformity is
+simply pushed down into the valuesof one or two general catchall
+questions (all first-order logical languages do this).</p>
+  </li>
+  <li>
+    <p>List all the Beings who will be present in the pool, and fill in
+their parts.  The time to encode knowledge inot many simple
+representation schemes is proportional to the square of
+(occassionally exponential in) the ammount of interrelated
+knowledge (e.g. consider the frame problem).  The filling in of a
+new Being is independent of the number of Beings already in the
+pool, because Beings can communicate via non-deterministic goal
+mechanisms, and not to know the names of the Beings who will answer
+their queries.  This filling in is <em>linear</em> in the number of Beings
+parts listed in <code>Q</code>; all parts of all Beings must be (at least
+should be) filled in.</p>
+  </li>
+  <li>
+    <p>The human user interacts with the completed Being community, until
+the desired task is complete.</p>
+  </li>
+</ol>
+
+<p>Section 5 classifies the effects of constraining that <code>Q</code> be constant (over all Beings in the system).  Theoretical aspects of Being systems follow in section 6.  Next comes an evaluation of PUP6’s behavior.  The uses and the problems with Beings are summed up in the final section.</p>
+
+<ol>
+  <li>
+    <h1 id="internal-details-of-beings">Internal Details of Beings</h1>
+  </li>
+</ol>
+
+<p>A set of 29 ubiquitous questions were chosen, representing everything one expert might want to ask another.  At least, they naturally encompass those questions which were asked during the simulated meeting, hence should be sufficient for generating CF.  <code>Q</code>, this universal set of Being parts is listed in Appendix I.  The reader is urged to glance at this now, and refer to it whenever a Being part is specifically mentioned.</p>
+
+<p>Each of the 100 Beings in PUP6 should have had a value for each part (in reality, only 40%. of these 2900 slots were filled in, only 30% were actually necessary to generate CF).  A value for a part is simply a LISP pmgiam which can answer that question, often by asking questions of the same Being, of other Beings, and of the user.  A part may also assert some fact, create or modify some structure (including demons, Beings, and parts of Beings).  Appendix I shows the values stored under each part for the typical Being named “INFO-OBTAINER”.</p>
+
+<p>The set of parts breaks into three rough categories (1) those parts which are useful in deciding which Being gets control, (2) those which are used once the Being gains control, and (3) those useful only to answer the user’s questions and keep him oriented.  The next section describes categories 1 and 2, the section after that explicates the third categoiy of Being parts.</p>
+
+<h2 id="control-in-the-pup6-system">5.1 Control in the PUP6 System</h2>
+
+<p>At the humans’ meeting, only one expert spoke at a time; in the Beings community, only one Being has contiol at any given moment.  He uses his parts to do things (ask, create, modify), and yields control either voluntarily or through interruption.</p>
+
+<p>In slightly more procedural terms, the scenario is as follows.  One part of a Being senses its televance (often the IDEN or EFFECTS parts, which are united with all such parts to form a large production system[5]).  If more than one Being wants control at any time a special Being CHOOSER, seizes contiol momentarily.  He asks each competing Being to evaluate its WHEN part, to see how senously it needs to go immediately.  If some Beings are still tied for first place, he asks them to evaluate their COMPLEXITY parts, to see which is the simplest.  If any <em>still</em> tie for top, one is randomly chosen.  In any case, the winner is then passed control.  Once in control, a Being arranges some of us parts in some order and evaluates them.  For example, the ARGS part might be first, if it asks for some arguments which no Being has supplied then the whole Being might decide to fail. Some parts, when evaluated, might create a new Being, might ask questions which require this whole process to repeat recursively, etc.  This “asking” really means broadcasting a request to one or two parts of every Being, for example “Is there a known fast way of gronking toves?” would be asked as a search for a Being whose COMPLEXITY part indicated speed, and whose EFFECTS part contained a production with a template matching “gronking toves.”  A list of the respondents would be returned.  (Incidentally, GERUND would recognize this, but later give up when no one could recognize “gronk toves”).  The questioner might pose some new questions directly to these Beings, might turn control over to them directly, etc.  One way or another, the Being eventually relinquishes control.  If it had no direct successor in mind, all the Beings are asked if they want to take over.  There will always be some Being who will take over; the general management types of Beings are always able - but reluctant – to do so.</p>
+
+<p>How does each Being decide which parts to evaluate, and in which order, once it gains contiol?  The answer might seem to be difficult or tedious for whoever writes Beings, since it might vary from Being to Being.  In fact, it doesn’t!  The commitment to a universal set of Being parts is inefficient in some ways (each Being needed only a third of  all the parts) but allows for some simplifications right here.  What parts should be evaluated, and in what order, when a Being gains control?  This decision depends primarily on the  types of parts present in the Being, not on their values.  But  every Being has the same anatomy, so one single algorithm can assemble any Being’s parts into an executable LISP function.  Moreover, this assemby can be done when the  system is first loaded (or when a new Being is first created), and need only be redone for a Being when the values of its  parts change.  Such changes are rare; experts are not often open-minded.  The precise algorithm is sketched in the box below.  The parts useful here include ARCS, DEMONS,  META-CODE, COMMENTS, ARG-CHECK, and  REQUISITES.</p>
+
+<p><em>Assembling a Being into an executable function</em></p>
+
+<p>When a Being <code>B</code> first gains control, its <code>EXPLICIT-ARGS</code> are bound.  The <code>IMPLICIT-ARGS</code> are initialized, the <code>B</code> is pushed onto the Being control stack, and any newly activated <code>DEMONS</code> are so tagged.  The Being who called <code>B</code> should have explained his reasons by assigning some phrase to the variable <code>BECAUSE</code>.  This reason is now stored as a special sub-part of the <code>WHY</code> part of <code>B</code>.  <code>BECAUSE</code> is rebound periodically in the <code>META-CODE</code> and <code>COMMENTS</code> to keep current the explanation of each call that <code>B</code> makes.  Each <code>ARG-CHECK</code> predicate is evaluated.  If any returns <code>NIL</code> the entire Being reports that it has failed; otherwise, the <code>PRE-REQUISITES</code> are examined.  Effort is expemded to make them true, that are currently not satisfied.  Each <code>COMMENT</code> is evaluated, then the <code>CO-REQUISITES</code>, <code>META-CODE</code> and the current demons are executed in pseudo-parallel.  Each <code>POST-REQUISITE</code> is then examined, and an effort made to satisfy it.  The newly-activated demons are exorcised, <code>B</code> is popped from the Being control stack, and the value computed by the <code>META-CODE</code> is returned.  Some heuristics were devised to take advantage of the fact that the Beings often didn’t need many of its standard parts.  Fo example, <code>INFO-OBTAINER</code> has no new deomns or co-requisites, so no parallel processing need be simulated.</p>
+
+<h2 id="keeping-the-user-informed">5.2 Keeping the user informed</h2>
+
+<p>In the earlier conversation excerpts. the simulated human user had no trouble whatever understanding what the simulated experts asked him.  In the actual programmed PUP6 system, the human who was siting at the teletype quite rarely understood what was wanted by the Beings.  He frequently had to interrupt them and ask them questions about who was in tontrol, why, what he was trying to do, what had tecently tianspnrd. etc These ideally can be phiased as simple lernevals and FVALs of active Beings’ part* The Benig parts most often called for by the user are the simple one time “m inn it ion” templates These include WHAT , MOW , WHV, and AFFECTS Foi theoretical reasons explained latei, the syuthesmd piogtam, CF. was writen as a pool of BES ns’lt (by PUP6, but not during the piotocol Actually, a foituitou* “bug” m PUP6 created this mtnguiiig situation) Although us question answering ability is infenoi to PUPfi. the fact that it has any such power was tuipnsing to the authoi In other words, one can inteirupt the taiget piogiam as it is lunnmg and ask questions Any Being un the tnntml stack will provide fully instantiated amwms to any of us 29 allowable queries (its parts), all othei r<em>einj;s will provide only hypothetical answers As an example, roimdei this actual excerpt of a human using the CF piogiarn synthesized by PUP6 (Some liberty has been taken with the English; e.g., the user really types WHAT</em>, not What atr you &lt;frvw£*) *???” simply means “guess the name of the scene with these objects and relations” OF types in ifoln i. the usei in boldface. </p>
+
+<div class="footnotes">
+  <ol>
+    <li id="fn:1">
+      <p>So cool! <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:2">
+      <p>It would be amazing to show this in action. <a href="#fnref:2" class="reversefootnote">&#8617;</a></p>
+    </li>
+    <li id="fn:3">
+      <p>Self-optimizing! <a href="#fnref:3" class="reversefootnote">&#8617;</a></p>
+    </li>
+  </ol>
+</div>
+
+            </div>
+	  </li>
+	  <hr>
+	  <h4>2013.05.11</h4>
+	</ul>
+
+	<div id="footer">
+          <p>
+	    <a href="http://www.lachrymology.org">Home</a> | 
+	    <a href="http://twitter.com/fogus">@fogus</a>
+	  </p>
+	</div>
+      </div>
+    </div>
+  </body>
+</html>
+
